@@ -194,9 +194,11 @@ async def transfer(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # ===== 启动 =====
 def main():
-    app = import os
-ApplicationBuilder().token(os.getenv("8486507377:AAFJAiCWGYziwbfIvtyihkV3oMEzGdmU26Q"))
+    import os
 
+TOKEN = os.environ.get("8486507377:AAFJAiCWGYziwbfIvtyihkV3oMEzGdmU26Q")
+
+app = ApplicationBuilder().token(TOKEN).build()
     app.add_handler(CommandHandler("startgame", startgame))
     app.add_handler(CommandHandler("join", join))
     app.add_handler(CommandHandler("roll", roll))
